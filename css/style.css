@@ -812,7 +812,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: rgba(255, 255, 255, 0.8);
 }
 #fh5co-started .btn {
-  height: 54px;
+  /*height: 54px;*/
   border: none !important;
   background: #fff;
   color: #FF9000;

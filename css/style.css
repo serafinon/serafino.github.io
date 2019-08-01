@@ -706,6 +706,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: absolute;
   left: 0;
   top: 0;
+  height: 120px; width: 120px;
 }
 
 .work {

@@ -408,6 +408,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-heading {
   margin-bottom: 5em;
 }
+
 .fh5co-heading.fh5co-heading-sm {
   margin-bottom: 2em;
 }
@@ -687,7 +688,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .chart {
   width: 160px;
   height: 160px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 0px auto;
   position: relative;
   text-align: center;
   color: white !important;
@@ -696,19 +697,29 @@ h1, h2, h3, h4, h5, h6, figure {
   position: absolute;
   top: 50%;
   left: 0;
-  margin-top: 2px;
+  margin-top: -30px;
+  vertical-align: middle;
   width: 100%;
+}
+.chart>.doublelinechart{
+  margin-top: -45px !important;
 }
 .chart span strong {
   display: block;
 }
 .chart canvas {
-  position: absolute;
+  /*position: absolute;
   left: 0;
-  top: 0;
+  top: 0;*/
   height: 120px !important;
   width: 120px !important;
 }
+@media (min-width: 992px){
+  #fh5co-skills>.container>.row>.col-md-3 {
+    width: 20% !important;
+  }
+}
+
 
 .work {
   background-size: cover;

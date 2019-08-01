@@ -1305,4 +1305,11 @@ input[type="text"] {
 }
 
 hr{border-color: #ccc;}
+
+#asdasdasd{
+  font-family: "Space Mono", Arial, serif !important;
+  font-weight: lighter;
+  transform: rotate(0) !important;
+}
+#asdasdasd>span:before,#asdasdasd>span:after{display:none;}
 /*# sourceMappingURL=style.css.map */

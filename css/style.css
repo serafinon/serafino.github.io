@@ -8,6 +8,14 @@
 /* =======================================================
 *
 * 	Template Style
+
+TEMPLATE:
+  #7A989A - blu
+  #849271 - verde
+  #C1AE8D - brown
+  #CF9546 - orange
+  #C67052 - red
+
 *
 * ======================================================= */
 body {
@@ -47,13 +55,13 @@ body {
 }
 
 a {
-  color: #FF9000;
+  color: #C67052;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #FF9000;
+  color: #C67052;
   outline: none;
   text-decoration: none;
 }

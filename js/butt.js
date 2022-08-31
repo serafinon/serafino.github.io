@@ -1,15 +1,18 @@
-document.querySelectorAll('.button').forEach(button => {
+//const $ = (s, o = document) => o.querySelector(s);
+//const $$ = (s, o = document) => o.querySelectorAll(s);
 
-    let duration = 3000,
-        svg = button.querySelector('svg'),
+$$('.button').forEach(button => {
+
+    let icon = $('.icon', button),
+        arrow = $('.icon > svg', button),
+        line = $('.icon div svg', button),
         svgPath = new Proxy({
-            y: null,
-            smoothing: null
+            y: null
         }, {
             set(target, key, value) {
                 target[key] = value;
-                if(target.y !== null && target.smoothing !== null) {
-                    svg.innerHTML = getPath(target.y, target.smoothing, null);
+                if(target.y !== null) {
+                    line.innerHTML = getPath(target.y, .25, null);
                 }
                 return true;
             },
@@ -18,41 +21,62 @@ document.querySelectorAll('.button').forEach(button => {
             }
         });
 
-    button.style.setProperty('--duration', duration);
-
-    svgPath.y = 20;
-    svgPath.smoothing = 0;
+    svgPath.y = 12;
 
     button.addEventListener('click', e => {
-
-        e.preventDefault();
-
         if(!button.classList.contains('loading')) {
 
             button.classList.add('loading');
 
-            gsap.to(svgPath, {
-                smoothing: .3,
-                duration: duration * .065 / 1000
-            });
-
-            gsap.to(svgPath, {
+            gsap.timeline({
+                repeat: 2
+            }).to(svgPath, {
+                y: 17,
+                duration: .17,
+                delay: .03
+            }).to(svgPath, {
                 y: 12,
-                duration: duration * .265 / 1000,
-                delay: duration * .065 / 1000,
-                ease: Elastic.easeOut.config(1.12, .4)
+                duration: .3,
+                ease: Elastic.easeOut.config(1, .35)
             });
 
-            setTimeout(() => {
-                svg.innerHTML = getPath(0, 0, [
-                    [3, 14],
-                    [8, 19],
-                    [21, 6]
-                ]);
-            }, duration / 2);
+            gsap.timeline({
+                repeat: 2,
+                repeatDelay: .1,
+                onComplete() {
+                    gsap.to(arrow, {
+                        '--y': -17.5,
+                        duration: .4
+                    });
+                    setTimeout(() => button.classList.add('complete'), 200);
+                }
+            }).to(arrow, {
+                '--y': 9,
+                duration: .2
+            }).to(arrow, {
+                '--y': -9,
+                duration: .2
+            });
+
+            gsap.timeline().to(icon, {
+                y: 4,
+                duration: .2
+            }).to(icon, {
+                y: 8,
+                duration: .2,
+                delay: .2
+            }).to(icon, {
+                y: 12,
+                duration: .2,
+                delay: .2
+            }).to(icon, {
+                y: 18,
+                duration: .2,
+                delay: .2
+            });
 
         }
-
+        e.preventDefault();
     });
 
 });
@@ -76,10 +100,13 @@ function getPoint(point, i, a, smoothing) {
 
 function getPath(update, smoothing, pointsNew) {
     let points = pointsNew ? pointsNew : [
-            [4, 12],
+            [2, 12],
             [12, update],
-            [20, 12]
+            [22, 12]
         ],
         d = points.reduce((acc, point, i, a) => i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${getPoint(point, i, a, smoothing)}`, '');
     return `<path d="${d}" />`;
 }
+
+
+console.log("ciao");

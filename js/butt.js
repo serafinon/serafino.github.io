@@ -1,7 +1,7 @@
 //const $ = (s, o = document) => o.querySelector(s);
 //const $$ = (s, o = document) => o.querySelectorAll(s);
 ///
-
+/*
 document.querySelectorAll('.button').forEach(button => {
 
     let icon = $('.icon', button),
@@ -81,7 +81,7 @@ document.querySelectorAll('.button').forEach(button => {
     });
 
 });
-
+*/
 function getPoint(point, i, a, smoothing) {
     let cp = (current, previous, next, reverse) => {
             let p = previous || current,

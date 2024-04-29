@@ -1,6 +1,7 @@
 //const $ = (s, o = document) => o.querySelector(s);
 //const $$ = (s, o = document) => o.querySelectorAll(s);
 ///
+
 document.querySelectorAll('.button').forEach(button => {
 
     let icon = $('.icon', button),
@@ -76,7 +77,7 @@ document.querySelectorAll('.button').forEach(button => {
             });
 
         }
-        e.preventDefault();
+        //e.preventDefault();
     });
 
 });

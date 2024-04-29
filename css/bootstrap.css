@@ -892,7 +892,11 @@ pre code {
     width: 1170px;
   }
 }
-
+@media (min-width: 1800px) {
+  .container {
+    width: 1500px;
+  }
+}
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -955,27 +959,27 @@ pre code {
 }
 
 .col-xs-7 {
-  width: 58.33333%;
+  width: 50%;
 }
 
 .col-xs-8 {
-  width: 66.66667%;
+  width: 50%;
 }
 
 .col-xs-9 {
-  width: 75%;
+  width: 50%;
 }
 
 .col-xs-10 {
-  width: 83.33333%;
+  width: 50%;
 }
 
 .col-xs-11 {
-  width: 91.66667%;
+  width: 50%;
 }
 
 .col-xs-12 {
-  width: 100%;
+  width: 50%;
 }
 
 .col-xs-pull-0 {
